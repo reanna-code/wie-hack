@@ -1,18 +1,19 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // Import React Calendar's base styles
 import './InnerCareCalendar.css'; // Import your custom styles
 
 const moods = [
-  { name: 'Sleepy', color: '#B0C4DE' }, // Light Steel Blue
-  { name: 'Exhausted', color: '#8B0000' }, // Dark Red
-  { name: 'Sad', color: '#4169E1' }, // Royal Blue
-  { name: 'Untalkative', color: '#708090' }, // Slate Gray
-  { name: 'Happy', color: '#FFD700' }, // Gold
-  { name: 'Excited', color: '#FF6347' }, // Tomato
-  { name: 'Motivated', color: '#32CD32' }, // Lime Green
+  { name: 'Sleepy', color: '#A8B9D1' }, // Pastel Light Steel Blue
+  { name: 'Exhausted', color: '#D16A6A' }, // Pastel Dark Red
+  { name: 'Sad', color: '#7A9FD6' }, // Pastel Royal Blue
+  { name: 'Untalkative', color: '#A6B6B6' }, // Pastel Slate Gray
+  { name: 'Happy', color: '#FFD47D' }, // Pastel Gold
+  { name: 'Excited', color: '#FF8E7D' }, // Pastel Tomato
+  { name: 'Motivated', color: '#A4E69A' }, // Pastel Lime Green
 ];
+
 
 const InnerCareCalendar = () => {
   const [date, setDate] = useState(new Date());
@@ -30,13 +31,16 @@ const InnerCareCalendar = () => {
 
       {/* Calendar Component */}
       <div className="calendar-wrapper">
+        {/* Arrows above the calendar */}
         <button
           className="calendar-arrow"
           onClick={() => setDate(new Date(date.setMonth(date.getMonth() - 1)))}
         >
           &#8592;
         </button>
+        
         <Calendar value={date} onChange={handleDateChange} />
+        
         <button
           className="calendar-arrow"
           onClick={() => setDate(new Date(date.setMonth(date.getMonth() + 1)))}
