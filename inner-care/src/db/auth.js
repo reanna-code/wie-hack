@@ -9,6 +9,26 @@ import app from "./db"
 
 const auth = getAuth(app);
 
+import { FirebaseError } from "firebase/app";
+
+export const handleAuthError = (error) => {
+  if (error instanceof FirebaseError) {
+    switch (error.code) {
+      case "auth/email-already-in-use":
+        alert("Email already in use!");
+        break;
+      case "auth/invalid-email":
+        alert("Invalid email address!");
+        break;
+      case "auth/weak-password":
+        alert("Password should be at least 6 characters!");
+        break;
+      default:
+        alert("Authentication error: " + error.message);
+    }
+  }
+};
+
 
 export const signUp = async (email, password) => {
   try {

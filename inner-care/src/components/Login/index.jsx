@@ -1,7 +1,7 @@
 'use client'; 
 import React, { useState } from "react";
 import { Button, TextField, Typography, Box, Container } from "@mui/material";
-import { signIn, signUp, logOut, monitorAuthState } from "@/db/auth";
+import { signIn, signUp, logOut, monitorAuthState, handleAuthError } from "@/db/auth";
 import { useRouter } from "next/navigation"; 
 
 const Login = () => {
@@ -20,6 +20,7 @@ const Login = () => {
       handleSuccess();
     } catch (error) {
       console.error("Error signing up:", error.message);
+      handleAuthError(error);
     }
   };
 
@@ -30,6 +31,7 @@ const Login = () => {
       handleSuccess();
     } catch (error) {
       console.error("Error signing in:", error.message);
+      handleAuthError(error);
     }
   };
 
@@ -40,6 +42,7 @@ const Login = () => {
       console.log("User signed out");
     } catch (error) {
       console.error("Error signing out:", error.message);
+      handleAuthError(error);
     }
   };
 
