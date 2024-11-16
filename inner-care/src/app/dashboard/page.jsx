@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
+import InnerCareCalendar from "@/components/InnerCareCalendar";
 
 export default function Dashboard() {
   return (
     <Box>
-      <Typography variant="h4">Dashboard</Typography>
-      <Typography>Welcome to your dashboard!</Typography>
+      <InnerCareCalendar/>
     </Box>
   );
 }

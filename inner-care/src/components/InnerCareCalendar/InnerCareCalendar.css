@@ -1,0 +1,102 @@
+/* General container styling */
+.calendar-container {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #a78fbf; /* Matches the purple background */
+    color: white;
+   }
+   
+   
+   /* Header styles */
+   .calendar-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+   }
+   
+   
+   /* React-Calendar component styling */
+   .react-calendar {
+    width: 90%;
+    max-width: 600px;
+    background-color: #d9c3e6; /* Light purple calendar background */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    color: #333;
+   }
+   
+   
+   /* React-Calendar navigation buttons */
+   .react-calendar__navigation button {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+   }
+   
+   
+   .react-calendar__navigation button:hover {
+    color: #d4a9ff;
+   }
+   
+   
+   /* Days of the week styling */
+   .react-calendar__month-view__weekdays {
+    font-weight: bold;
+    color: white;
+    background-color: #9678b6;
+   }
+   
+   
+   .react-calendar__month-view__weekdays__weekday {
+    padding: 10px 0;
+   }
+   
+   
+   /* Calendar days */
+   .react-calendar__tile {
+    padding: 20px 0;
+    background: none;
+    border-radius: 50%;
+    cursor: pointer;
+   }
+   
+   
+   .react-calendar__tile--active {
+    background-color: #734d91;
+    color: white;
+   }
+   
+   
+   .react-calendar__tile--active:hover {
+    background-color: #5e3c77;
+   }
+   
+   
+   .react-calendar__tile:hover {
+    background-color: #d4a9ff;
+    color: #fff;
+   }
+   
+   
+   /* Arrows for navigation */
+   .calendar-arrow {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin: 0 20px;
+   }
+   
+   
+   .calendar-arrow:hover {
+    color: #d4a9ff;
+   }
+   
