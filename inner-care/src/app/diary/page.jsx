@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
+import Navbar from "@/components/Navbar";
 
 export default function Diary() {
   return (
     <Box>
-      <Typography variant="h4">Diary</Typography>
-      <Typography>Write your diary entries here.</Typography>
+      <Navbar/>
     </Box>
   );
 }

@@ -9,11 +9,15 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
+  const handleSuccess = () => {
+    router.push("/dashboard")
+  }
+
   const handleSignUp = async () => {
     console.log("Sign Up:", email, password);
     try {
       await signUp(email, password); // Assuming this returns a promise
-      router.push("/dashboard"); // Redirect to /dashboard on success
+      handleSuccess();
     } catch (error) {
       console.error("Error signing up:", error.message);
     }
@@ -23,7 +27,7 @@ const Login = () => {
     console.log("Sign In:", email, password);
     try {
       await signIn(email, password); // Assuming this returns a promise
-      router.push("/dashboard"); // Redirect to /dashboard on success
+      handleSuccess();
     } catch (error) {
       console.error("Error signing in:", error.message);
     }
@@ -40,7 +44,7 @@ const Login = () => {
   };
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs"> 
       <Box
         sx={{
           display: "flex",
@@ -51,26 +55,45 @@ const Login = () => {
           padding: 3,
           borderRadius: 2,
           boxShadow: 3,
+          bgcolor: "white"
         }}
       >
         <Typography variant="h4" component="h1" sx={{color:"black"}} gutterBottom>
           Login
         </Typography>
         <TextField
-          fullWidth
-          type="email"
-          label="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          margin="normal"
-        />
+            fullWidth
+            type="email"
+            label="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            margin="normal"
+            sx={{
+                backgroundColor: 'white', // White background
+                '& .MuiInputBase-input': {
+                color: 'black', // Black text color
+                },
+                '& .MuiFormLabel-root': {
+                color: 'black', // Black label text
+                },
+            }}
+            />
         <TextField
-          fullWidth
-          type="password"
-          label="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          margin="normal"
+            fullWidth
+            type="password"
+            label="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            margin="normal"
+            sx={{
+                backgroundColor: 'white', // White background
+                '& .MuiInputBase-input': {
+                color: 'black', // Black text color
+                },
+                '& .MuiFormLabel-root': {
+                color: 'black', // Black label text
+                },
+            }}
         />
         <Box sx={{ mt: 3, width: "100%", textAlign: "center" }}>
           <Button

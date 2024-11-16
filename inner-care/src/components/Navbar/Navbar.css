@@ -1,0 +1,37 @@
+.navbar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 50px;
+    line-height: 50px;
+    background: linear-gradient(to left, #7a60ff, #cd9ffa);
+    z-index: 1030;
+  }
+  
+  .navbar .nav-item {
+    margin: 0 5px;
+    padding: 0;
+  }
+  
+  .navbar .nav-item a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  .navbar .nav-item a:hover {
+    color: #5f0099;
+  }
+  
+  .navbar .navbar-toggler {
+    cursor: pointer;
+  }
+  
+  .navbar .navbar-toggler span {
+    color: #fff;
+  }
+  
