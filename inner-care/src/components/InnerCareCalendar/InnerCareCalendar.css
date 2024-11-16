@@ -1,11 +1,10 @@
-
 /* General container styling */
 .calendar-container {
   font-family: 'Arial', sans-serif;
   display: flex;
-  flex-direction: row; /* Align calendar and graph side by side */
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background-color: #a78fbf; /* Matches the purple background */
   color: white;
@@ -25,8 +24,8 @@
 
 /* React-Calendar component styling */
 .react-calendar {
-  width: 100%;
-  max-width: 400px;
+  width: 90%;
+  max-width: 600px;
   background-color: #d9c3e6; /* Light purple calendar background */
   border: none;
   border-radius: 10px;
@@ -35,32 +34,98 @@
   color: #333;
 }
 
-.calendar-navigation {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Calendar Navigation Arrows */
-.calendar-arrow-left, .calendar-arrow-right {
-  font-size: 2rem;
+/* React-Calendar navigation buttons */
+.react-calendar__navigation button {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
   color: white;
   cursor: pointer;
+  font-size: 1.2rem;
 }
 
-.calendar-arrow-left:hover, .calendar-arrow-right:hover {
+.react-calendar__navigation button:hover {
   color: #d4a9ff;
 }
 
-/* Graph container styling */
-.graph-container {
-  margin-left: 50px; /* Add space between the calendar and graph */
-  width: 400px;
-  height: 300px;
+/* Days of the week styling */
+.react-calendar__month-view__weekdays {
+  font-weight: bold;
+  color: white;
+  background-color: #9678b6;
 }
 
-.graph-header {
+.react-calendar__month-view__weekdays__weekday {
+  padding: 10px 0;
+}
+
+/* Calendar days */
+.react-calendar__tile {
+  padding: 20px 0;
+  background: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.react-calendar__tile--active {
+  background-color: #734d91;
+  color: white;
+}
+
+.react-calendar__tile--active:hover {
+  background-color: #5e3c77;
+}
+
+.react-calendar__tile:hover {
+  background-color: #d4a9ff;
+  color: #fff;
+}
+
+/* Arrows for navigation */
+.calendar-wrapper {
+  display: flex;
+  flex-direction: column;  /* Stack the arrows above the calendar */
+  align-items: center;
+}
+
+.calendar-arrow {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin: 10px 0; /* Vertical spacing between arrows and calendar */
+}
+
+.calendar-arrow:hover {
+  color: #d4a9ff;
+}
+
+/* Mood Legend Section */
+.mood-legend {
+  margin-top: 40px;
   text-align: center;
+}
+
+.mood-legend h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
+}
+
+.moods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mood-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 15px;
+  font-size: 1rem;
+}
+
+.mood-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
