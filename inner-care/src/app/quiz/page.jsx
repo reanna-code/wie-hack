@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import Navbar from "@/components/Navbar";
+import Quiz from "@/components/Quiz";
 
-export default function Quiz() {
+export default function QuizPage() {
   return (
     <Box>
-      <Typography variant="h4">Quiz</Typography>
-      <Typography>Take your quiz here.</Typography>
+      <Navbar/>
+      <Quiz/>
     </Box>
   );
 }

@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import Navbar from "@/components/Navbar";
+import Wellness from "@/components/Wellness";
 
-export default function Wellness() {
+export default function WellnessPage() {
   return (
     <Box>
-      <Typography variant="h4">Wellness</Typography>
-      <Typography>Explore wellness resources.</Typography>
+      <Navbar/>
+      <Wellness/>
     </Box>
   );
 }

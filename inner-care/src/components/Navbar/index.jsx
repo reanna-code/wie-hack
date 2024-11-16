@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 import React, { useState } from "react";
 import { AppBar, Toolbar, IconButton, Box, Button, Drawer, useMediaQuery } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
@@ -15,6 +15,7 @@ const Navbar = () => {
   return (
     <AppBar position="fixed" sx={{ background: "linear-gradient(to left, #7a60ff, #cd9ffa)" }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        {/* Logo */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Link href="/" passHref>
             <img
@@ -33,14 +34,20 @@ const Navbar = () => {
         ) : (
           // Navbar Links for Desktop
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-            <Button component={Link} href="#home" sx={{ color: "white", textTransform: "uppercase", fontWeight: 600, fontSize: "13px", margin: "0 5px" }}>
-              Home
+            <Button component={Link} href="/dashboard" sx={{ color: "white", textTransform: "uppercase", fontWeight: 600, fontSize: "13px", margin: "0 5px" }}>
+              Dashboard
             </Button>
-            <Button component={Link} href="#about" sx={{ color: "white", textTransform: "uppercase", fontWeight: 600, fontSize: "13px", margin: "0 5px" }}>
-              Features
+            <Button component={Link} href="/diary" sx={{ color: "white", textTransform: "uppercase", fontWeight: 600, fontSize: "13px", margin: "0 5px" }}>
+              Diary
+            </Button>
+            <Button component={Link} href="/quiz" sx={{ color: "white", textTransform: "uppercase", fontWeight: 600, fontSize: "13px", margin: "0 5px" }}>
+              Quiz
+            </Button>
+            <Button component={Link} href="/wellness" sx={{ color: "white", textTransform: "uppercase", fontWeight: 600, fontSize: "13px", margin: "0 5px" }}>
+              Wellness
             </Button>
             <Button component={Link} href="/login" sx={{ color: "white", textTransform: "uppercase", fontWeight: 600, fontSize: "13px", margin: "0 5px" }}>
-              Log In
+              Sign Out
             </Button>
           </Box>
         )}
@@ -48,14 +55,45 @@ const Navbar = () => {
         {/* Drawer for Mobile Menu */}
         <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
           <Box sx={{ width: 250, padding: 2 }}>
-            <Button onClick={toggleDrawer} sx={{ padding: "10px", color: "black", width: "100%" }} component={Link} href="#home">
-              Home
+            <Button
+              onClick={toggleDrawer}
+              sx={{ padding: "10px", color: "black", width: "100%" }}
+              component={Link}
+              href="/dashboard"
+            >
+              Dashboard
             </Button>
-            <Button onClick={toggleDrawer} sx={{ padding: "10px", color: "black", width: "100%" }} component={Link} href="#about">
-              Features
+            <Button
+              onClick={toggleDrawer}
+              sx={{ padding: "10px", color: "black", width: "100%" }}
+              component={Link}
+              href="/diary"
+            >
+              Diary
             </Button>
-            <Button onClick={toggleDrawer} sx={{ padding: "10px", color: "black", width: "100%" }} component={Link} href="/login">
-              Log In
+            <Button
+              onClick={toggleDrawer}
+              sx={{ padding: "10px", color: "black", width: "100%" }}
+              component={Link}
+              href="/quiz"
+            >
+              Quiz
+            </Button>
+            <Button
+              onClick={toggleDrawer}
+              sx={{ padding: "10px", color: "black", width: "100%" }}
+              component={Link}
+              href="/wellness"
+            >
+              Wellness
+            </Button>
+            <Button
+              onClick={toggleDrawer}
+              sx={{ padding: "10px", color: "black", width: "100%" }}
+              component={Link}
+              href="/login"
+            >
+              Sign Out
             </Button>
           </Box>
         </Drawer>
